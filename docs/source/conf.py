@@ -60,3 +60,5 @@ napoleon_google_docstring = True
 napoleon_numpy_docstring = False
 napoleon_include_init_with_doc = True  # list __init___ docstrings separately from class docstring.
 napoleon_use_rtype = False  # output the return type inline with the description.
+
+autodoc_mock_imports = ['pysolar']
