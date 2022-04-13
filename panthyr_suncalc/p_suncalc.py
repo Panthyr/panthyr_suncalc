@@ -31,7 +31,7 @@ def get_sun_azimuth(lat: float, lon: float, timestamp: datetime.datetime):
     # check if timestamp is timezone aware (needed for PySolar >vxxx)
     timestamp = _make_tz_aware(timestamp)
 
-    return (round(solar.get_azimuth(lat, lon, timestamp), 2))
+    return (round(float(solar.get_azimuth(lat, lon, timestamp)), 2))
 
 
 def get_sun_zenith(lat: float, lon: float, timestamp: datetime.datetime):
