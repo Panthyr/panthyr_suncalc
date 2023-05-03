@@ -11,8 +11,9 @@ from pysolar import solar
 import datetime
 import logging
 import pytz
+import warnings
 
-log = logging.getLogger('__main__.{}'.format(__name__))
+log = logging.getLogger(f'__main__.{__name__}')
 
 
 def get_sun_azimuth(lat: float, lon: float, timestamp: datetime.datetime):
@@ -30,8 +31,9 @@ def get_sun_azimuth(lat: float, lon: float, timestamp: datetime.datetime):
     """
     # check if timestamp is timezone aware (needed for PySolar >vxxx)
     timestamp = _make_tz_aware(timestamp)
+    warnings.filterwarnings('ignore')
 
-    return (round(solar.get_azimuth(lat, lon, timestamp), 2))
+    return float(round(solar.get_azimuth(lat, lon, timestamp), 2))
 
 
 def get_sun_zenith(lat: float, lon: float, timestamp: datetime.datetime):
@@ -50,8 +52,8 @@ def get_sun_zenith(lat: float, lon: float, timestamp: datetime.datetime):
     """
     # check if timestamp is timezone aware (needed for PySolar >vxxx)
     timestamp = _make_tz_aware(timestamp)
-
-    return (round(solar.get_altitude(lat, lon, timestamp), 2))
+    warnings.filterwarnings('ignore')
+    return float(round(solar.get_altitude(lat, lon, timestamp), 2))
 
 
 def _make_tz_aware(timestamp: datetime.datetime):

@@ -18,9 +18,10 @@ sys.path.insert(0, os.path.abspath('../..'))
 
 project = 'Panthyr Suncalc'
 author = 'Dieter Vansteenwegen'
+status = 'production'
 
 # The full version, including alpha/beta/rc tags
-release = '0.1.0-beta'
+release = 'v1.0.0'
 
 # -- General configuration ---------------------------------------------------
 
