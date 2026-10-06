@@ -8,5 +8,7 @@ setup(
     packages=find_packages(),
     install_requires=[
         'pysolar @ git+ssh://git@github.com/pingswept/pysolar.git',
+        'numpy<1.25',
+        'pytz',
     ],
 )
